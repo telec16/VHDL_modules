@@ -1,4 +1,0 @@
-v 3
-file . "DIV_N_tb.vhd" "20200120215632.000" "20200120225635.928":
-  entity div_n_tb at 7( 277) + 0 on 11;
-  architecture behavior of div_n_tb at 26( 726) + 0 on 12;
