@@ -10,12 +10,10 @@ USE IEEE.STD_LOGIC_1164.ALL;
 entity DIV_N_tb is
     PORT
     ( 
-        clk_1   : out STD_LOGIC;
         clk_2   : out STD_LOGIC;
         clk_3   : out STD_LOGIC;
         clk_5   : out STD_LOGIC;
         clk_6   : out STD_LOGIC;
-        clk_1_d : out STD_LOGIC;
         clk_2_d : out STD_LOGIC;
         clk_3_d : out STD_LOGIC;
         clk_5_d : out STD_LOGIC;
@@ -45,31 +43,6 @@ architecture Behavior of DIV_N_tb is
     SIGNAL sig_clrn : STD_LOGIC := '0';
     
 begin
-
-    clk_1_c : DIV_N
-    GENERIC MAP
-    (
-        N     => 1,
-        DELAY => 0
-    )
-    PORT MAP
-    (
-        clrn    => sig_clrn,
-        clk_in  => sig_clk,
-        clk_out => clk_1
-    );
-    clk_1_d_c : DIV_N
-    GENERIC MAP
-    (
-        N     => 1,
-        DELAY => 1
-    )
-    PORT MAP
-    (
-        clrn    => sig_clrn,
-        clk_in  => sig_clk,
-        clk_out => clk_1_d
-    );
     
     clk_2_c : DIV_N
     GENERIC MAP
@@ -180,7 +153,7 @@ begin
         wait for clk_period/2;
     end process;
   
-    sig_clrn <= '1' after 1 us;
+    sig_clrn <= '1' after 1.25 us;
     
     end_test : process
     begin
